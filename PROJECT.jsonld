@@ -1,0 +1,70 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://messenger.etzhayyim.com",
+  "name": "etzhayyim-project-messenger",
+  "description": "Etzhayyim Messenger - real-time messaging platform for team communication with channels, direct messages, and thread replies",
+  "url": "https://messenger.etzhayyim.com",
+  "applicationCategory": "Communication",
+  "operatingSystem": "Kubernetes",
+  "author": {
+    "@type": "Organization",
+    "name": "etzhayyim",
+    "url": "https://etzhayyim.com"
+  },
+  "component": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "messenger-mcp",
+      "description": "SpinApp MCP component - messaging backend with channel/DM management, message persistence via sql graph ORM (performer/rdbms)",
+      "applicationCategory": "Backend",
+      "programmingLanguage": "TinyGo",
+      "runtimePlatform": "SpinApp (WebAssembly Component Model)"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "messenger-ui",
+      "description": "SvelteKit SSG frontend - real-time messaging UI with channel sidebar, message timeline, and thread view",
+      "applicationCategory": "Frontend",
+      "programmingLanguage": "TypeScript",
+      "runtimePlatform": "CDN (Linode Object Storage via Envoy Gateway)"
+    }
+  ],
+  "rdfUnifiedDocuments": {
+    "@type": "Dataset",
+    "name": "Unified top-level RDF/JSON-LD documents",
+    "description": "Consolidated from project top-level *.jsonld files except PROJECT.jsonld.",
+    "documents": [
+      {
+        "fileName": "scheduler.jsonld",
+        "content": {
+          "@context": [
+            "https://schema.org/",
+            {
+              "etzhayyim": "https://etzhayyim.com/schemas/",
+              "capabilities": "etzhayyim:capabilities",
+              "survivalIndicators": "etzhayyim:survivalIndicators",
+              "scheduler": "etzhayyim:scheduler",
+              "milestones": "etzhayyim:milestones",
+              "blockers": "etzhayyim:blockers",
+              "dependsOn": {
+                "@id": "etzhayyim:dependsOn",
+                "@type": "@id"
+              },
+              "ingestKey": "etzhayyim:ingestKey",
+              "window": "etzhayyim:window",
+              "valueUpdatedAt": "etzhayyim:valueUpdatedAt"
+            }
+          ],
+          "@type": "CreativeWork",
+          "name": "etzhayyim-project-messenger Scheduler",
+          "identifier": "etzhayyim-project-messenger/scheduler",
+          "description": "Project schedule (milestones) and blockers.",
+          "dateCreated": "2026-02-17T00:00:00+00:00",
+          "milestones": [],
+          "blockers": []
+        }
+      }
+    ]
+  }
+}
